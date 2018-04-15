@@ -1,0 +1,24 @@
+<?php
+class Q3 extends Handler {
+    public function setSuccessor($nextService) {
+        $this->successor = $nextService;
+    }
+
+    public function handleRequest($request) {
+        $this->handle = 'q3';
+        if($request->getService() == $this->handle) {
+            $this->tableMaster = 'helpdesk';
+            $this->hookup = UniversalConnect::doConnect();
+            $this->sql = "select response from $this->tableMaster where chain='$this->handle'";
+
+            if($result = $this->hookup->query($this->sql)) {
+                $row = $result->fetch_assoc();
+                echo $row['response'];
+            }
+            $this->hookup->close();
+        }else if($this->successor != null) {
+            $this->successor->handleRequest($request);
+        }
+    }
+}
+?>

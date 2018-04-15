@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>help desk data entry and update</title>
+</head>
+<body>
+    <h2>help desk data entry</h2>
+    <form action="InsertData.php" method="POST" name="dataentry">
+        Entry query chain value (q1...qx)  <br>
+        <input type="text" name="chain" size="3">
+        </p>
+        enter help information <br>
+        <textarea name="response" cols="24" rows="8"></textarea>
+        </p>
+        <input type="submit" value="enter data into table" name="send">
+    </form>
+    <h2>update information</h2>
+    <form action="UpdateData.php" method="POST" name="dataupdate">
+        enter query chain value (q1...qx) <br>
+        <input type="text" name="chain" size="3">
+        </p>
+        enter help information <br>
+        <textarea name="response" cols="24" rows="8"></textarea>
+        </p>
+        <input type="submit" value="update table" name="update">
+    </form>
+    
+</body>
+</html>

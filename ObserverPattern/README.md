@@ -1,0 +1,7 @@
+#通过php内置的观察者设计模式的接口
+#SPL是标准php库的简写，这个苦衷包括一组解决标准问题的接口和类
+#观察者模式的核心在与Subject和Observer接口。Subject包含一个给定的状态，观察者订阅这个主题，将主题的当前状态通知观察者
+#用于观察者设计模式的三个SPL接口/类如下：
+#SplSubject
+#SplObserver
+#SplObjectStorage
